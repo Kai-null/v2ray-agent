@@ -267,13 +267,6 @@
         "update_interval": "1d"
       },
       {
-        "tag": "geosite-openai@ads",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/openai@ads.srs",
-        "update_interval": "1d"
-      },
-      {
         "tag": "geosite-openai",
         "type": "remote",
         "format": "binary",
@@ -412,12 +405,6 @@
           "geoip-google"
         ],
         "outbound": "Google"
-      },
-      {
-        "rule_set": "geosite-openai@ads",
-        "action": "reject",
-        "method": "default",
-        "no_drop": false
       },
       {
         "rule_set": "geosite-openai",
