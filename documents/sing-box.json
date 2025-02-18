@@ -230,13 +230,13 @@
         "tag": "墙外白名单",
         "type": "remote",
         "format": "source",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Kai-null/v2ray-agent/refs/heads/master/documents/WhiteList.json"
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SK871688/v2ray-agent/refs/heads/master/documents/WhiteList.json"
       },
       {
         "tag": "墙外黑名单",
         "type": "remote",
         "format": "source",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Kai-null/v2ray-agent/refs/heads/master/documents/BlackList.json"
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SK871688/v2ray-agent/refs/heads/master/documents/BlackList.json"
       },
       {
         "tag": "geosite-category-ads-all",
