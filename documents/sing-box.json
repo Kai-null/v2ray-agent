@@ -9,7 +9,7 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "metacubexd",
       "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "😀手动切换",
+      "external_ui_download_detour": "🚀 手动选择",
       "default_mode": "rule"
     },
     "cache_file": {
@@ -23,14 +23,14 @@
         "address": "https://1.1.1.1/dns-query",
         "address_resolver": "dns_resolver",
         "strategy": "ipv4_only",
-        "detour": "😀手动切换"
+        "detour": "🏳️‍🌈 墙外访问"
       },
       {
         "tag": "dns_direct",
         "address": "h3://dns.alidns.com/dns-query",
         "address_resolver": "dns_resolver",
         "strategy": "ipv4_only",
-        "detour": "direct"
+        "detour": "🎯 本地直连"
       },
       {
         "tag": "google",
@@ -44,7 +44,7 @@
         "tag": "dns_resolver",
         "address": "114.114.114.114",
         "strategy": "ipv4_only",
-        "detour": "direct"
+        "detour": "🎯 本地直连"
       }
     ],
     "rules": [
@@ -113,8 +113,15 @@
   ],
   "outbounds": [
     {
+      "type": "selector",
+      "tag": "🚀 手动选择",
+      "outbounds": [
+        "✅ 自动选择"
+      ]
+    },
+    {
       "type": "urltest",
-      "tag": "自动选择",
+      "tag": "✅ 自动选择",
       "outbounds": [
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -124,94 +131,102 @@
     },
     {
       "type": "selector",
-      "tag": "😀手动切换",
+      "tag": "YouTube",
       "outbounds": [
+        "🚀 手动选择",
+        "✅ 自动选择"
       ]
     },
     {
       "type": "selector",
       "tag": "Telegram",
       "outbounds": [
-        "😀手动切换",
-        "自动选择"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "YouTube",
-      "outbounds": [
-        "😀手动切换",
-        "自动选择"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "netflix",
-      "outbounds": [
-        "😀手动切换",
-        "自动选择"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "OpenAI",
-      "outbounds": [
-        "😀手动切换",
-        "自动选择"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "Apple",
-      "outbounds": [
-        "😀手动切换",
-        "自动选择",
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "Google",
-      "outbounds": [
-        "😀手动切换",
-        "自动选择"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "Microsoft",
-      "outbounds": [
-        "😀手动切换",
-        "自动选择",
-        "direct"
+        "🚀 手动选择",
+        "✅ 自动选择"
       ]
     },
     {
       "type": "selector",
       "tag": "Github",
       "outbounds": [
-        "😀手动切换",
-        "自动选择",
-        "direct"
+        "🚀 手动选择",
+        "✅ 自动选择"
       ]
     },
     {
       "type": "selector",
-      "tag": "本地直连",
+      "tag": "Google",
       "outbounds": [
-        "direct",
-        "😀手动切换",
-        "自动选择"
-      ],
-      "default": "direct"
+        "🚀 手动选择",
+        "✅ 自动选择"
+      ]
     },
     {
-      "tag": "direct",
+      "type": "selector",
+      "tag": "OpenAI",
+      "outbounds": [
+        "🚀 手动选择",
+        "✅ 自动选择"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Apple",
+      "outbounds": [
+        "🎯 本地直连",
+        "🚀 手动选择",
+        "✅ 自动选择"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Microsoft",
+      "outbounds": [
+        "🎯 本地直连",
+        "🚀 手动选择",
+        "✅ 自动选择"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "🗒 白名单",
+      "outbounds": [
+        "direct",
+        "🚀 手动选择",
+        "🎯 本地直连"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "🏳️‍🌈 墙外访问",
+      "outbounds": [
+        "direct",
+        "🚀 手动选择",
+        "✅ 自动选择"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "🇨🇳 墙内访问",
+      "outbounds": [
+        "direct",
+        "🎯 本地直连",
+        "🚀 手动选择"
+      ]
+    },
+    {
+      "tag": "🎯 本地直连",
       "type": "direct"
     }
   ],
   "route": {
     "rule_set": [
+      {
+        "tag": "墙外白名单",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Kai-null/v2ray-agent/refs/heads/master/documents/WhiteList.json"
+      },
       {
         "tag": "geosite-category-ads-all",
         "type": "remote",
@@ -238,20 +253,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
-        "update_interval": "1d"
-      },
-      {
-        "tag": "geosite-netflix",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs",
-        "update_interval": "1d"
-      },
-      {
-        "tag": "geoip-netflix",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
         "update_interval": "1d"
       },
       {
@@ -349,11 +350,11 @@
       },
       {
         "clash_mode": "global",
-        "outbound": "😀手动切换"
+        "outbound": "🏳️‍🌈 墙外访问"
       },
       {
         "clash_mode": "direct",
-        "outbound": "本地直连"
+        "outbound": "🎯 本地直连"
       },
       {
         "type": "logical",
@@ -380,6 +381,10 @@
         "no_drop": false
       },
       {
+        "rule_set": "geosite-youtube",
+        "outbound": "YouTube"
+      },
+      {
         "rule_set": [
           "geosite-telegram",
           "geoip-telegram"
@@ -387,15 +392,15 @@
         "outbound": "Telegram"
       },
       {
-        "rule_set": "geosite-youtube",
-        "outbound": "YouTube"
+        "rule_set": "geosite-github",
+        "outbound": "Github"
       },
       {
         "rule_set": [
-          "geosite-netflix",
-          "geoip-netflix"
+          "geosite-google",
+          "geoip-google"
         ],
-        "outbound": "netflix"
+        "outbound": "Google"
       },
       {
         "rule_set": "geosite-openai@ads",
@@ -412,23 +417,16 @@
         "outbound": "Apple"
       },
       {
-        "rule_set": [
-          "geosite-google",
-          "geoip-google"
-        ],
-        "outbound": "Google"
-      },
-      {
         "rule_set": "geosite-microsoft",
         "outbound": "Microsoft"
       },
       {
-        "rule_set": "geosite-github",
-        "outbound": "Github"
+        "rule_set": "墙外白名单",
+        "outbound": "🗒 白名单"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "outbound": "😀手动切换"
+        "outbound": "🏳️‍🌈 墙外访问"
       },
       {
         "rule_set": [
@@ -437,10 +435,10 @@
           "geoip-private",
           "geoip-cn"
         ],
-        "outbound": "本地直连"
+        "outbound": "🇨🇳 墙内访问"
       }
     ],
-    "final": "本地直连",
+    "final": "🎯 本地直连",
     "auto_detect_interface": true
   }
 }
