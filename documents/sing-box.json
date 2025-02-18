@@ -197,6 +197,14 @@
     },
     {
       "type": "selector",
+      "tag": "📓 黑名单",
+      "outbounds": [
+        "🎯 本地直连",
+        "🚀 手动选择"
+      ]
+    },
+    {
+      "type": "selector",
       "tag": "🏳️‍🌈 墙外访问",
       "outbounds": [
         "🚀 手动选择",
@@ -223,6 +231,12 @@
         "type": "remote",
         "format": "source",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Kai-null/v2ray-agent/refs/heads/master/documents/WhiteList.json"
+      },
+      {
+        "tag": "墙外黑名单",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/Kai-null/v2ray-agent/refs/heads/master/documents/BlackList.json"
       },
       {
         "tag": "geosite-category-ads-all",
@@ -420,6 +434,10 @@
       {
         "rule_set": "墙外白名单",
         "outbound": "🗒 白名单"
+      },
+      {
+        "rule_set": "墙外黑名单",
+        "outbound": "📓 黑名单"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
