@@ -9,7 +9,7 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "metacubexd",
       "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "手动切换",
+      "external_ui_download_detour": "😀手动切换",
       "default_mode": "rule"
     },
     "cache_file": {
@@ -23,7 +23,7 @@
         "address": "https://1.1.1.1/dns-query",
         "address_resolver": "dns_resolver",
         "strategy": "ipv4_only",
-        "detour": "手动切换"
+        "detour": "😀手动切换"
       },
       {
         "tag": "dns_direct",
@@ -124,7 +124,7 @@
     },
     {
       "type": "selector",
-      "tag": "手动切换",
+      "tag": "😀手动切换",
       "outbounds": [
       ]
     },
@@ -132,7 +132,7 @@
       "type": "selector",
       "tag": "Telegram",
       "outbounds": [
-        "手动切换",
+        "😀手动切换",
         "自动选择"
       ]
     },
@@ -140,7 +140,7 @@
       "type": "selector",
       "tag": "YouTube",
       "outbounds": [
-        "手动切换",
+        "😀手动切换",
         "自动选择"
       ]
     },
@@ -148,7 +148,7 @@
       "type": "selector",
       "tag": "netflix",
       "outbounds": [
-        "手动切换",
+        "😀手动切换",
         "自动选择"
       ]
     },
@@ -156,7 +156,7 @@
       "type": "selector",
       "tag": "OpenAI",
       "outbounds": [
-        "手动切换",
+        "😀手动切换",
         "自动选择"
       ]
     },
@@ -164,7 +164,7 @@
       "type": "selector",
       "tag": "Apple",
       "outbounds": [
-        "手动切换",
+        "😀手动切换",
         "自动选择",
         "direct"
       ]
@@ -173,7 +173,7 @@
       "type": "selector",
       "tag": "Google",
       "outbounds": [
-        "手动切换",
+        "😀手动切换",
         "自动选择"
       ]
     },
@@ -181,7 +181,7 @@
       "type": "selector",
       "tag": "Microsoft",
       "outbounds": [
-        "手动切换",
+        "😀手动切换",
         "自动选择",
         "direct"
       ]
@@ -190,7 +190,7 @@
       "type": "selector",
       "tag": "Github",
       "outbounds": [
-        "手动切换",
+        "😀手动切换",
         "自动选择",
         "direct"
       ]
@@ -200,7 +200,7 @@
       "tag": "本地直连",
       "outbounds": [
         "direct",
-        "手动切换",
+        "😀手动切换",
         "自动选择"
       ],
       "default": "direct"
@@ -349,7 +349,7 @@
       },
       {
         "clash_mode": "global",
-        "outbound": "手动切换"
+        "outbound": "😀手动切换"
       },
       {
         "clash_mode": "direct",
@@ -428,7 +428,7 @@
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "outbound": "手动切换"
+        "outbound": "😀手动切换"
       },
       {
         "rule_set": [
